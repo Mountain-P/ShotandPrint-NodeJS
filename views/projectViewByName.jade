@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form(action="uploaded", method="post", enctype="multipart/form-data")
+    div.input
+      span.label File Select to Upload at #{title}:
+      br
+      input(type="hidden" ,name="foldername" ,value='#{title}')
+      input(type="file", name="filetoupload")
+    div.actions
+      input(type="submit")
+  p
+  a(href="/project/photowatch?projectname=#{title}") watchphoto   
+  p
+  each framepath in framepaths
+    p
+    img.image(src=framepath,width="150",height="100")
+    //p frame: #{framepath}
+    a(href="/project/cameraFrame?frame=#{framepath}") frame: #{framepath}
+  p
+  a(href="/project/view") back

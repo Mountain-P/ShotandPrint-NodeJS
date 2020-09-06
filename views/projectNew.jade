@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form(action="createProject", method="post")
+        div.input
+            span.label Priject Name: 
+            input(type="text", name="newProjectName")
+        div.actions
+            input(type="submit")
+  

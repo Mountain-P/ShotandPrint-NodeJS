@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p Current Projectname:#{selprojectname} 
+  p Select the Project You Want to Use
+  each projectName in projectNames
+   a(href=`/project/selprojectname?projectname=${projectName}`) #{projectName}
+   br 
+  a(href="/project") Back

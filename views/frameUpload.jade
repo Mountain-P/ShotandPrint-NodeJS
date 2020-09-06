@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1= title
+    form(action="uploaded", method="post", enctype="multipart/form-data")
+        div.input
+            span.label File Select: 
+            input(type="file", name="filetoupload")
+        div.actions
+            input(type="submit")
